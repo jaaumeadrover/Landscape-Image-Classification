@@ -1,8 +1,3 @@
-import cv2
-import skimage.feature
-import numpy as np
-import matplotlib.pyplot as plt
-
 class FeatureTransformer:
     def transform(self, image, method, params=None):
         """
