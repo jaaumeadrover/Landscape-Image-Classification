@@ -8,7 +8,4 @@ class FeatureTransformer:
         :param params: Additional parameters specific to the chosen method.
         :return: Transformed image.
         """
-        if params is None:
-            return method(image)
-        else:
-            return method(image, **params)
+        return method(image) if params is None else method(image, **params)
