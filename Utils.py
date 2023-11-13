@@ -7,6 +7,7 @@ CREATION DATE: 2023-11-08
 from FeatureTransformer import FeatureTransformer
 from itertools import chain
 import skimage.feature
+import numpy as np
 import os
 import cv2
 
@@ -54,9 +55,8 @@ def process_images_in_folder2(featureTransformer, imgFeature, class_folder_path,
                     # Extract custom feature
                     featureHOG = featureTransformer.transform(image=image, method=imgFeature[0], params=imgFeature[1])
                     featureCANNY = featureTransformer.transform(image=image, method=imgFeature[2], params=imgFeature[3])
-                    
                     # Combine features into a single list
-                    features_list = list(chain(featureHOG, featureCANNY))
+                    features_list = np.concatenate((featureHOG.flatten(), featureCANNY.flatten()),axis=None)
                     
                     x_dict.append(features_list)
                     y_dict.append(class_folder_name.lower())
