@@ -41,7 +41,7 @@ def process_images_in_folder(featureTransformer,imgFeature,class_folder_path,cla
                     y_dict.append(class_folder_name.lower())
 
 """
-Function `process_images_in_folder`:
+Function `process_images_in_folder2`:
 ·PARAMS:
 1. featureTransformer
 2. customParams[]=[skimage.feature.*,params,skimage.feature.*,params2]
